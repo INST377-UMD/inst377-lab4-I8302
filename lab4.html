@@ -1,12 +1,13 @@
 <html>
     <head>
-        <title>INST377 - Lab 4</title>
-        <link rel="stylesheet" href="lab4css"/>
+        <title>Lab 4</title>
+        <link rel="stylesheet" href="lab4css.css"/>
     </head>
 
     <body>
-        <h1 id="heading">INST377 - Lab 4</h1>
+        <h1 id="title">INST377 - Lab 4</h1>
             <div class="main-container">
+
                 <!--Alert-->
                 <div class="section">
                     <form id="alert" onsubmit="alertName()">
@@ -25,9 +26,9 @@
                 <!--Text Validate-->
                 <div class="section">
                     <form id="test">
-                        <label for="textbox">Text Tester:</label>
-                        <input type="text" id="testbox" required>
-                        <button type="button" onclick="testbox()">Validate Text</button>
+                        <label for="textboxs">Text Tester:</label>
+                        <input type="text" id="textboxs" required>
+                        <button type="button" onclick="textbox()">Validate Text</button>
                     </form>
                 </div>
 
@@ -38,21 +39,36 @@
             </div>
 
             <!--Javascript-->
-            <script> 
+            <script>
                 function alertName() {
-                    let name = document.getElementById('name').value;
+                    const name = document.getElementById('name').value;
                     alert("Hi " + name + "!")
                     return false;
                 }
 
-                let isRed = true;
+                let isAqua = true;
                 function changeColor() {
-                if (isRed) {
-                    document.body.style.backgroundColor = "pink";
+                if (isAqua) {
+                    document.body.style.backgroundColor = "olive";
                 } else {
-                    document.body.style.backgroundColor = "red";
+                    document.body.style.backgroundColor = "aqua";
                 }
-                isRed = !isRed;
+                isAqua = !isAqua;
+                }
+
+                function textbox() {
+                    const word = document.getElementById("textboxs").value;
+                    var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                    if (validation.test(word)) {
+                        alert("Special characters are present!");
+                    } else {
+                        alert("Congrats! There are no special characters")
+                    }
+                }
+
+                function adding() {
+                    const addTitle = document.getElementById("title");
+                    addTitle.innerHTML += " Add Text";
                 }
             </script>
     </body>
