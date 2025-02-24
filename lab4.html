@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>INST377 - Lab 4</title>
+        <link rel="stylesheet" href="lab4css"/>
+    </head>
+
+    <body>
+        <h1 id="heading">INST377 - Lab 4</h1>
+            <div class="main-container">
+                <!--Alert-->
+                <div class="section">
+                    <form id="alert" onsubmit="alertName()">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required>
+                        <button type="submit">Alert Me!</button>
+                        <!--input type="submit" value="Alert Me!" class="button-->
+                    </form>
+                </div>
+
+                <!--Change Color-->
+                <div class="section">
+                    <button type="button" onclick="changeColor()">Change Color</button>
+                </div>
+
+                <!--Text Validate-->
+                <div class="section">
+                    <form id="test">
+                        <label for="textbox">Text Tester:</label>
+                        <input type="text" id="testbox" required>
+                        <button type="button" onclick="testbox()">Validate Text</button>
+                    </form>
+                </div>
+
+                <!--Add Text-->
+                <div class="section">
+                    <button type="button" onclick="adding()">Add Text</button>
+                </div>
+            </div>
+
+            <!--Javascript-->
+            <script> 
+                function alertName() {
+                    let name = document.getElementById('name').value;
+                    alert("Hi " + name + "!")
+                    return false;
+                }
+
+                let isRed = true;
+                function changeColor() {
+                if (isRed) {
+                    document.body.style.backgroundColor = "pink";
+                } else {
+                    document.body.style.backgroundColor = "red";
+                }
+                isRed = !isRed;
+                }
+            </script>
+    </body>
+</html>
